@@ -1,0 +1,140 @@
+Setting device to 0.
+
+
+ (                                                         
+ )\ )                        (                          )  
+(()/(   (               )  ( )\     (      )         ( /(  
+ /(_))  )\ )   (     ( /(  )((_)   ))\  ( /(   (     )\()) 
+(_))_  (()/(   )\ )  )(_))((_)_   /((_) )(_))  )\ ) (_))/  
+ |   \  )(_)) _(_/( ((_)_  / _ \ (_))( ((_)_  _(_/( | |_   
+ | |) || || || ' \))/ _` || (_) || || |/ _` || ' \))|  _|  
+ |___/  \_, ||_||_| \__,_| \__\_\ \_,_|\__,_||_||_|  \__|  
+        |__/                                               
+
+
+DynaQuant (beta)
+
+If you use the code, please consider citing Sawaya, et al., Nano Lett., 2015, 15 (3), 1722
+
+arrlen = 10
+debug_diags 0
+dt 1.0
+totalsteps 400
+ensembleavgmode ENS_AVG_MODE_FIRST
+ensembleruns 5
+m 12
+ka_substeps 5
+absorbspec 0
+cdspec 0
+lineshapedress 0
+gausswidth 1000
+dostatelooping 1
+stepsperloop 200
+writeoutpops 1  !Writing out populations
+printallpops 1   !Write out all populations
+writebinarypops 0
+printpop0 300
+printpop1 301
+printpop2 359
+print_partic 0
+writeoutstates 0
+initstate 300
+initfromfile 0
+initstatefile data-example/sample_multisite_init.dat
+propmode PROP_MODE_LANCZOS
+simtype SIM_TYPE_ZZ_REAL_NOISE
+staticdis 1
+sigmastatdis 300     !in wavenumbers
+temperature77
+zz_specd_file data-example/specd_tresp.dat
+hamfile data-example/hamInner.dat
+dipolefile data-example/dips_1roll.dat
+outfolder outDataFolder
+data-example/hamInner.dat
+Matrix is 'general'
+In constructor for popPrintClass().
+
+This is _not_ a continuation run.
+
+popFileName = outDataFolder/pops.dat
+tempPopFileName = outDataFolder/temp_pops.dat
+
+this->lenPrevPops = 1055600
+Preparing for ZZReal type simulation. 
+For counter==0, jVal = 2.08274    this->temperature = 77
+OmegaVal = 0.00153248     G_of_omeg = 14.7683     coeffVal = 8.74586
+
+
+Setting up memory for static disorder.
+Beginning initStateAsBasisVector().
+Setting intial state to 300.
+Allocating state.
+this->totalSteps = 400
+Doing state looping. Steps per loop = 200
+totalLoops, stepsInLastLoop: 2,200
+
+hbar_inv_cm_fs = 5308.84
+neg_inv_hbar_imag.x = 0
+neg_inv_hbar_imag.y = -0.000188365
+h_expCoeff.{x,y} = 0, -0.000188365
+propMode PROP_MODE_LANCZOS
+Initializing lanczos object.
+c_k vals
+1  0.5  0.113636  0.0151515  0.00126263  6.31313e-05  1.50313e-06  
+numEnsembleRuns = 5.
+
+numInitConditions = 1
+Starting simulation. Elapsed time is 1
+Setting initial state #0
+Including static disorder with sigma = 300
+Resetting random phases for ZZReal.
+currentStep = 200
+run = 0
+numRows, numCols = 5278,201
+currentStep = 400
+run = 0
+numRows, numCols = 5278,201
+Total Accumulated Error for this run: 2.02436e-12.
+23 seconds elapsed.
+Including static disorder with sigma = 300
+Resetting random phases for ZZReal.
+currentStep = 200
+run = 1
+numRows, numCols = 5278,201
+currentStep = 400
+run = 1
+numRows, numCols = 5278,201
+Total Accumulated Error for this run: 1.15289e-13.
+46 seconds elapsed.
+Including static disorder with sigma = 300
+Resetting random phases for ZZReal.
+currentStep = 200
+run = 2
+numRows, numCols = 5278,201
+currentStep = 400
+run = 2
+numRows, numCols = 5278,201
+Total Accumulated Error for this run: 4.06135e-13.
+70 seconds elapsed.
+Including static disorder with sigma = 300
+Resetting random phases for ZZReal.
+currentStep = 200
+run = 3
+numRows, numCols = 5278,201
+currentStep = 400
+run = 3
+numRows, numCols = 5278,201
+Total Accumulated Error for this run: 2.51581e-13.
+94 seconds elapsed.
+Including static disorder with sigma = 300
+Resetting random phases for ZZReal.
+currentStep = 200
+run = 4
+numRows, numCols = 5278,201
+currentStep = 400
+run = 4
+numRows, numCols = 5278,201
+Total Accumulated Error for this run: 8.32887e-13.
+118 seconds elapsed.
+
+Closing. Elapsed time is 118 seconds.

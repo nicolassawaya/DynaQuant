@@ -1,0 +1,96 @@
+!propagate.in
+! In-file for lanczos propagation
+! 
+! Note that lines that contain '!' in beginning are ignored.
+! Only lines with '=' are considered
+! Note also that '!' cannot appear after a string parameter, but it seems to work after a number
+
+
+debug_diags = 0
+
+
+
+! dt in femtoseconds
+dt              = 1.0
+totalsteps      = 400
+ensembleavgmode = ENS_AVG_MODE_FIRST
+                    !ENS_AVG_MODE   _NONE _FIRST _CONTINUATION
+! Number of ensemble runs should generally be >1000
+ensembleruns    = 5
+
+
+!elements in lanczos decomposition
+m           = 12
+!number of subtimesteps in kubo-anderson
+ka_substeps = 5
+
+!Absorption spectrum
+absorbspec      = 0
+cdspec          = 0
+lineshapedress  = 0
+! GaussWidth in time-domain, in femtoseconds
+gausswidth      = 1000
+
+
+
+!Limited memory space for propagation
+dostatelooping      =   1
+stepsperloop        =   200
+
+writeoutpops        =   1  !Writing out populations
+printallpops        =   1   !Write out all populations
+writebinarypops		=	0
+
+!Which site pops to print (base-zero) (max ten of these). Should not skip any number.
+printpop0           =   300
+printpop1           =   301
+printpop2           =   359
+
+! Print inverse participation ratio
+print_partic		=	0
+
+! Print state (as opposed to population) every X timesteps (One file per timestep, for ensemble)
+! Value of 0 or less means states not printed
+writeoutstates			= 	0
+
+
+!Initial state (Zero-based counting)
+initstate   = 300
+
+initfromfile 	= 0
+initstatefile = data-example/sample_multisite_init.dat
+
+propmode        = PROP_MODE_LANCZOS
+
+! simtype         = SIM_TYPE_CONST_HAM
+! simtype        = SIM_TYPE_KUBO_ANDERSON
+simtype         = SIM_TYPE_ZZ_REAL_NOISE
+
+!Statis disorder (Add random constant Gaussian offset to eat site for each run)
+staticdis       =   1
+sigmastatdis    =   300     !in wavenumbers
+
+
+! For ZZ-type simulation
+temperature     =   77
+zz_specd_file   =   data-example/specd_tresp.dat
+
+
+! Just inner roll
+hamfile = data-example/hamInner.dat
+dipolefile = data-example/dips_1roll.dat
+
+
+outfolder = outDataFolder
+
+
+
+
+
+
+
+
+
+
+
+
